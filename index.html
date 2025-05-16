@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Balfolk Ultras</title>
+  </head>
+  <body>
+    <h1>Willkommen bei den</h1>
+    
+    <!-- show logo.png aligned to center, width1000px-->
+    <img src="logo.png" alt="Logo" style="display: block; margin: 0 auto; width: 1000px;">
+
+    <!-- Show changing slogan from list in script tag -->
+    <script>
+      const slogans = [
+        "Taktgefühl gegen Menschenhass!",
+        "Wir pogen Mazurka.",
+        "Kein Tanz dem Faschismus!",
+        "Mit Links nach vorn statt rechts nach hinten!",
+        "Linksdrehung statt Rechtsruck!",
+        "Tanz dich frei, nicht fest.",
+        "Balfolk ist bunt, nicht braun.",
+        "Mit jedem Schritt ein Statement.",
+        "Barfuß gegen Betonköpfe.",
+        "Heimat ist, wo getanzt wird.",
+        "Mazurka statt Marschmusik!",
+        "Im Takt, aber nicht im Gleichschritt!"
+      ];
+      // Animate slogan change every 3 seconds, fade out and in
+      let currentIndex = 0;
+      const sloganElement = document.createElement('h2');
+      sloganElement.style.textAlign = 'center';
+      sloganElement.style.fontSize = '2em';
+      sloganElement.style.marginTop = '20px';
+      document.body.appendChild(sloganElement);
+      function changeSlogan() {
+        sloganElement.style.opacity = 0;
+        setTimeout(() => {
+          sloganElement.textContent = slogans[currentIndex];
+          currentIndex = (currentIndex + 1) % slogans.length;
+          sloganElement.style.opacity = 1;
+        }, 500);
+      }
+      setInterval(changeSlogan, 3000);
+      changeSlogan();
+    </script>
+    <p style="text-align: center; font-size: 1.2em; margin-top: 20px;">
+      <a href="https://www.balfolk-ultras.de" style="text-decoration: none; color: #007BFF;">Besuche unsere Webseite</a>
+    </p>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      h1 {
+        color: #151515;
+        text-align: center;
+        font-size: 2.5em;
+        margin-top: 50px;
+      }
+    </style>
+  </body>
+</html>
